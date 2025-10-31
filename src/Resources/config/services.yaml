@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Tourze\DifyChatflowBundle\Repository\:
+    resource: '../../Repository/'
+    
+  Tourze\DifyChatflowBundle\Command\:
+    resource: '../../Command/'
+    tags: ['console.command']
+    
+  Tourze\DifyChatflowBundle\DependencyInjection\:
+    resource: '../../DependencyInjection'
