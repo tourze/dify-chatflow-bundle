@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tourze\DifyChatflowBundle\Tests\Request;
 
-use HttpClientBundle\Tests\Request\RequestTestCase;
+use HttpClientBundle\Test\RequestTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Tourze\DifyChatflowBundle\Request\DeleteConversationRequest;
 
