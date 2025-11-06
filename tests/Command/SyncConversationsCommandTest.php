@@ -217,9 +217,21 @@ final class SyncConversationsCommandTest extends AbstractCommandTestCase
 
     private function createTestApp(): DifyApp
     {
-        $app = $this->createMock(DifyApp::class);
-        $app->method('getId')->willReturn('test-app-id');
-        $app->method('getName')->willReturn('Test App');
+        // 由于getId()是final方法，无法Mock，因此创建真实的DifyApp对象
+        // 使用反射设置私有属性来模拟测试数据
+        $app = new DifyApp();
+
+        // 设置ID（通过反射设置私有属性）
+        $reflection = new \ReflectionClass($app);
+        $idProperty = $reflection->getProperty('id');
+        $idProperty->setAccessible(true);
+        $idProperty->setValue($app, 'test-app-id');
+
+        // 设置其他属性
+        $app->setName('Test App');
+        $app->setApiKey('test-api-key');
+        $app->setBaseUrl('https://api.dify.ai');
+        $app->setValid(true);
 
         return $app;
     }
