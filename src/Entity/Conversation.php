@@ -44,7 +44,7 @@ class Conversation implements \Stringable
 
     #[ORM\Column(type: Types::JSON, nullable: true, options: ['comment' => '用户输入参数（JSON格式）'])]
     #[Assert\Type(type: 'array', message: 'Inputs must be an array.')]
-    private ?array $inputs = null; // @phpstan-ignore-line
+    private ?array $inputs = null;
 
     #[ORM\Column(type: Types::STRING, length: 50, options: ['comment' => '会话状态'])]
     #[Assert\NotBlank]

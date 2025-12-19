@@ -17,7 +17,7 @@ use Tourze\DifyCoreBundle\Entity\DifyApp;
 /**
  * Dify会话消息数据填充器
  */
-class ConversationMessageFixtures extends Fixture implements FixtureGroupInterface, DependentFixtureInterface
+final class ConversationMessageFixtures extends Fixture implements FixtureGroupInterface, DependentFixtureInterface
 {
     public const MESSAGE_1_REFERENCE = 'message-1';
     public const MESSAGE_2_REFERENCE = 'message-2';

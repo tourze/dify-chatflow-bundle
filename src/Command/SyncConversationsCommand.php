@@ -26,7 +26,7 @@ use Tourze\DifyCoreBundle\Service\DifyAppService;
     name: 'dify:sync-conversations',
     description: '同步Dify应用的会话记录和消息数据'
 )]
-class SyncConversationsCommand extends Command
+final class SyncConversationsCommand extends Command
 {
     public function __construct(
         private readonly EntityManagerInterface $entityManager,

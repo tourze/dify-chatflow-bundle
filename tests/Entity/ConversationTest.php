@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tourze\DifyChatflowBundle\Tests\Entity;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
 use Tourze\DifyChatflowBundle\Entity\Conversation;
 use Tourze\DifyCoreBundle\Entity\DifyApp;
 use Tourze\PHPUnitDoctrineEntity\AbstractEntityTestCase;
@@ -39,16 +38,19 @@ class ConversationTest extends AbstractEntityTestCase
 
     private Conversation $conversation;
 
-    private MockObject|DifyApp $difyApp;
+    private DifyApp $difyApp;
 
     protected function setUp(): void
     {
         parent::setUp();
 
         $this->conversation = new Conversation();
-        // 使用 DifyApp mock 来测试关联关系
-        // 理由：Conversation 实体与 DifyApp 存在 ManyToOne 关联关系
-        $this->difyApp = $this->createMock(DifyApp::class);
+        // 使用真实的 DifyApp 实体来测试关联关系
+        // 理由:Conversation 实体与 DifyApp 存在 ManyToOne 关联关系
+        $this->difyApp = new DifyApp();
+        $this->difyApp->setName('Test Dify App');
+        $this->difyApp->setApiKey('test-api-key-12345');
+        $this->difyApp->setBaseUrl('https://api.dify.ai');
     }
 
     public function testSetAndGetDifyConversationId(): void

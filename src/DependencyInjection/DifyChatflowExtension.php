@@ -6,7 +6,7 @@ namespace Tourze\DifyChatflowBundle\DependencyInjection;
 
 use Tourze\SymfonyDependencyServiceLoader\AutoExtension;
 
-class DifyChatflowExtension extends AutoExtension
+final class DifyChatflowExtension extends AutoExtension
 {
     protected function getConfigDir(): string
     {

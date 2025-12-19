@@ -46,7 +46,7 @@ class ConversationMessage implements \Stringable
 
     #[ORM\Column(type: Types::JSON, nullable: true, options: ['comment' => '用户输入参数（JSON格式）'])]
     #[Assert\Type(type: 'array', message: 'Inputs must be an array.')]
-    private ?array $inputs = null; // @phpstan-ignore-line
+    private ?array $inputs = null;
 
     #[ORM\Column(type: Types::TEXT, options: ['comment' => '用户输入/提问内容'])]
     #[Assert\NotBlank]
@@ -65,11 +65,11 @@ class ConversationMessage implements \Stringable
 
     #[ORM\Column(type: Types::JSON, nullable: true, options: ['comment' => '消息文件列表（JSON格式）'])]
     #[Assert\Type(type: 'array', message: 'Message files must be an array.')]
-    private ?array $messageFiles = null; // @phpstan-ignore-line
+    private ?array $messageFiles = null;
 
     #[ORM\Column(type: Types::JSON, nullable: true, options: ['comment' => '检索资源列表（JSON格式）'])]
     #[Assert\Type(type: 'array', message: 'Retriever resources must be an array.')]
-    private ?array $retrieverResources = null; // @phpstan-ignore-line
+    private ?array $retrieverResources = null;
 
     #[ORM\Column(type: Types::STRING, length: 100, options: ['comment' => '用户标识'])]
     #[Assert\NotBlank]
